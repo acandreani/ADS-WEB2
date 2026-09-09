@@ -17,3 +17,10 @@ Os projetos são independentes e possuem suas próprias instruções de execuç�
 O exercício implementa `PATCH /tarefas/:id` com separação entre router,
 controller, service e repository, injeção de dependências, validação e testes
 automatizados.
+
+### Encontro 7 — Validação e erros
+
+- [Parte 2 — Tratamento central de erros](encontro-07/parte-02-erros/README.md)
+
+O exemplo implementa validação, erros previstos, conflito, 404, JSON
+malformado, request ID e proteção contra vazamento de detalhes internos.
