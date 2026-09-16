@@ -24,3 +24,11 @@ automatizados.
 
 O exemplo implementa validação, erros previstos, conflito, 404, JSON
 malformado, request ID e proteção contra vazamento de detalhes internos.
+
+### Encontro 8 — Interface como cliente da API
+
+- [Texto 1 — Interface e API de tarefas](encontro-08/texto-01/README.md)
+
+O projeto independente inclui uma interface HTML/CSS/JavaScript, servidor
+Express e testes. O formulário cria tarefas por `POST /tarefas` e a página
+atualiza a lista com `GET /tarefas`.

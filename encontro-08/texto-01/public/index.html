@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de tarefas</title>
+  <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+  <main>
+    <h1>Tarefas</h1>
+    <form id="form-tarefa">
+      <label for="titulo">Título</label>
+      <input id="titulo" name="titulo" required minlength="3" maxlength="120">
+      <button id="botao-adicionar" type="submit">Adicionar</button>
+    </form>
+    <p id="mensagem" role="status" aria-live="polite"></p>
+    <ul id="lista" aria-label="Lista de tarefas"></ul>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color-scheme: light;
+  background: #f4f7fa;
+  color: #172536;
+}
+
+body { margin: 0; padding: 2rem 1rem; }
+main {
+  max-width: 42rem;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 1.5rem #17253618;
+}
+form { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+input { flex: 1 1 16rem; padding: 0.6rem; font: inherit; }
+button { padding: 0.65rem 1rem; font: inherit; cursor: pointer; }
+button:disabled { cursor: wait; opacity: 0.6; }
+#mensagem { min-height: 1.5em; }
+#mensagem[data-tipo="erro"] { color: #a02d27; }
+li { padding: 0.45rem 0; }
