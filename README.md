@@ -28,7 +28,12 @@ malformado, request ID e proteção contra vazamento de detalhes internos.
 ### Encontro 8 — Interface como cliente da API
 
 - [Texto 1 — Interface e API de tarefas](encontro-08/texto-01/README.md)
+- [Lista 1, exercícios 2 e 3 — Estados da lista e conclusão de tarefas](encontro-08/lista-01-exercicios-02-03/README.md)
 
 O projeto independente inclui uma interface HTML/CSS/JavaScript, servidor
 Express e testes. O formulário cria tarefas por `POST /tarefas` e a página
 atualiza a lista com `GET /tarefas`.
+
+A solução da Lista 1 acrescenta estados de carregamento e erro, bloqueio do
+botão durante a criação e um checkbox que envia `PATCH` e volta ao valor
+anterior se a atualização falhar.
