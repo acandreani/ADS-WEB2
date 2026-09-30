@@ -1,5 +1,9 @@
 # ADS-WEB2
 
+### Encontro 9 — Renderização de views
+
+- [Mesma template EJS no cliente e no servidor, com comparação sem template](encontro-09/renderizacao-compartilhada/README.md)
+
 Exercícios resolvidos da disciplina Desenvolvimento Web 2 do curso de
 Tecnologia em Análise e Desenvolvimento de Sistemas.
 

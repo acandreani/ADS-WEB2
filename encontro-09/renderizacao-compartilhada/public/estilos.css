@@ -1,0 +1,175 @@
+:root {
+  color-scheme: light;
+  --papel: #f5f0e6;
+  --papel-claro: #fffdf7;
+  --tinta: #17202a;
+  --tinta-suave: #54606a;
+  --regua: #c8bda9;
+  --azul: #174f7a;
+  --azul-escuro: #0d3554;
+  --amarelo: #f2c94c;
+  --erro: #9e2f25;
+  --foco: #b33b00;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+* { box-sizing: border-box; }
+html { scrollbar-color: var(--azul) var(--papel); }
+body { margin: 0; min-height: 100vh; background: var(--papel); }
+::selection { background: var(--amarelo); color: var(--tinta); }
+a { color: inherit; text-underline-offset: 0.2em; }
+a:focus-visible { outline: 3px solid var(--foco); outline-offset: 4px; }
+
+.pular {
+  position: fixed;
+  z-index: 10;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--tinta);
+  color: white;
+  transform: translateY(-180%);
+}
+.pular:focus { transform: translateY(0); }
+
+.cabecalho {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid var(--tinta);
+  background: var(--papel-claro);
+}
+.marca,
+.cabecalho nav,
+.modo,
+.selo {
+  font-family: 'Liberation Sans Narrow', 'Nimbus Sans Narrow', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+.marca { text-decoration: none; white-space: nowrap; }
+.cabecalho nav { display: flex; flex-wrap: wrap; gap: 0.35rem; font-size: 0.76rem; }
+.cabecalho nav a {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.cabecalho nav a:hover { border-color: var(--tinta); }
+.cabecalho nav a[aria-current='page'] { background: var(--tinta); color: var(--papel-claro); }
+.cabecalho nav a[aria-busy='true'] { cursor: progress; opacity: 0.65; }
+
+.pagina {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 7vw, 6rem) clamp(1rem, 5vw, 4rem);
+}
+#view { display: contents; }
+.introducao { grid-column: 1 / -1; max-width: 60rem; margin-bottom: 3rem; }
+.modo { margin: 0 0 1rem; color: var(--azul); font-size: 0.76rem; }
+h1, h2, p { text-wrap: pretty; }
+h1 {
+  max-width: 14ch;
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  line-height: 0.93;
+  letter-spacing: -0.035em;
+}
+.introducao > p:last-child,
+.resumo { max-width: 65ch; color: var(--tinta-suave); font-size: 1.16rem; line-height: 1.65; }
+h2 { margin: 0; font-size: 1.25rem; line-height: 1.25; }
+
+.resultado {
+  min-height: 25rem;
+  padding: 2rem clamp(1.25rem, 4vw, 3rem);
+  background: var(--papel-claro);
+  border-top: 0.45rem solid var(--azul);
+}
+.resultado-cabecalho { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.selo { color: var(--azul); font-size: 0.68rem; white-space: nowrap; }
+.tarefas { margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--regua); }
+.tarefa {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 0.7rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--regua);
+  line-height: 1.45;
+}
+.tarefa > :last-child { min-width: 0; overflow-wrap: anywhere; }
+.marcador { color: var(--azul); font: 700 0.68rem/1.8 'Liberation Sans Narrow', sans-serif; letter-spacing: 0.045em; text-transform: uppercase; }
+.concluida { color: var(--tinta-suave); text-decoration: line-through; text-decoration-thickness: 1px; }
+.estado-vazio, .carregando { margin-top: 3rem; color: var(--tinta-suave); font-style: italic; }
+
+.rastro {
+  align-self: start;
+  padding: 2rem;
+  background: var(--azul-escuro);
+  color: white;
+}
+.rastro ol { margin: 1.75rem 0; padding: 0; list-style: none; counter-reset: passos; }
+.rastro li {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0 0.8rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #ffffff42;
+  counter-increment: passos;
+}
+.rastro li::before {
+  content: counter(passos, decimal-leading-zero);
+  grid-row: 1 / 3;
+  color: var(--amarelo);
+  font: 700 0.72rem/1.7 'Liberation Sans Narrow', sans-serif;
+}
+.rastro strong { font-size: 0.98rem; }
+.rastro span { color: #d9e8f2; line-height: 1.45; }
+.dica, .alerta { margin: 1.6rem 0 0; color: #d9e8f2; font-size: 0.92rem; line-height: 1.55; }
+.alerta { padding-top: 1rem; border-top: 1px solid var(--amarelo); }
+.erro { max-width: 48rem; padding: 1rem; background: #fce9e5; color: var(--erro); border: 1px solid var(--erro); }
+
+.inicio {
+  width: min(74rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 9vw, 8rem) 0;
+}
+.inicio h1 { max-width: 17ch; }
+.escolhas { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border-top: 1px solid var(--tinta); }
+.escolhas a { display: grid; gap: 0.55rem; min-height: 11rem; padding: 1.5rem; border-right: 1px solid var(--tinta); text-decoration: none; }
+.escolhas a:first-child { border-left: 1px solid var(--tinta); }
+.escolhas a:hover, .escolhas a:focus-visible { background: var(--azul); color: white; }
+.escolhas strong { font-size: 1.25rem; }
+.escolhas span { max-width: 24ch; line-height: 1.5; }
+.instrucao { max-width: 65ch; margin: 2rem 0 0; line-height: 1.6; }
+
+@media (max-width: 760px) {
+  body { overflow-x: hidden; }
+  .cabecalho { grid-template-columns: 1fr; gap: 0.75rem; }
+  .cabecalho nav { display: grid; grid-template-columns: 1fr; }
+  .pagina { width: 100%; grid-template-columns: minmax(0, 1fr); padding-top: 3rem; }
+  #view { display: grid; grid-template-columns: minmax(0, 1fr); }
+  #view .introducao { grid-column: auto; }
+  .pagina > *, #view > * { min-width: 0; }
+  .introducao { margin-bottom: 2rem; }
+  h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .rastro { padding: 1.5rem; }
+  .escolhas { grid-template-columns: 1fr; }
+  .escolhas a, .escolhas a:first-child { min-height: auto; border-left: 1px solid var(--tinta); border-bottom: 1px solid var(--tinta); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #view > * { animation: revelar 360ms cubic-bezier(.16, 1, .3, 1) both; }
+  #view > :nth-child(2) { animation-delay: 70ms; }
+  #view > :nth-child(3) { animation-delay: 120ms; }
+  @keyframes revelar {
+    from { opacity: 0.01; transform: translateY(0.7rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}

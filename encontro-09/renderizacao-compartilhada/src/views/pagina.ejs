@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= tituloDocumento %></title>
+  <link rel="stylesheet" href="/estilos.css">
+</head>
+<body data-modo="<%= modo %>">
+  <%- include('partials/cabecalho', { paginaAtual }) %>
+  <main id="conteudo" class="pagina">
+    <div id="view"><%- conteudo %></div>
+  </main>
+  <% if (modo === 'cliente') { %>
+    <script src="/vendor/ejs.min.js"></script>
+    <script type="module" src="/renderizar-no-cliente.js"></script>
+  <% } %>
+  <script type="module" src="/navegacao.js"></script>
+</body>
+</html>

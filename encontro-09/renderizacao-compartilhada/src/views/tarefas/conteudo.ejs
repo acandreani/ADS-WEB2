@@ -1,0 +1,43 @@
+<section class="introducao">
+  <p class="modo"><%= modo === 'servidor' ? 'Template executada no servidor' : 'Template executada no navegador' %></p>
+  <h1><%= tituloPagina %></h1>
+  <p><%= explicacao %></p>
+</section>
+
+<section class="resultado" aria-labelledby="titulo-lista">
+  <div class="resultado-cabecalho">
+    <h2 id="titulo-lista"><%= modo === 'servidor' ? 'Lista entregue pronta' : 'Lista montada após o carregamento' %></h2>
+    <span class="selo">mesma template</span>
+  </div>
+  <% if (tarefas.length === 0) { %>
+    <p class="estado-vazio">Nenhuma tarefa.</p>
+  <% } else { %>
+    <ul class="tarefas">
+      <% for (const tarefa of tarefas) { %>
+        <li class="tarefa">
+          <span class="marcador"><%= tarefa.concluida ? 'Concluída' : 'Pendente' %></span>
+          <span class="<%= tarefa.concluida ? 'concluida' : '' %>"><%= tarefa.titulo %></span>
+        </li>
+      <% } %>
+    </ul>
+  <% } %>
+</section>
+
+<aside class="rastro" aria-labelledby="titulo-rastro">
+  <h2 id="titulo-rastro">Quem fez o trabalho?</h2>
+  <% if (modo === 'servidor') { %>
+    <ol>
+      <li><strong>Servidor</strong><span>buscou as tarefas</span></li>
+      <li><strong>Servidor</strong><span>executou conteudo.ejs</span></li>
+      <li><strong>Navegador</strong><span>recebeu a lista dentro do primeiro HTML</span></li>
+    </ol>
+    <p class="dica">Abra “Exibir código-fonte”: os títulos das tarefas já estarão no documento recebido.</p>
+  <% } else { %>
+    <ol>
+      <li><strong>Navegador</strong><span>recebeu primeiro uma página vazia</span></li>
+      <li><strong>Navegador</strong><span>buscou a API e conteudo.ejs</span></li>
+      <li><strong>Navegador</strong><span>executou EJS e inseriu o resultado</span></li>
+    </ol>
+    <p class="dica">Abra Network: além do documento, aparecem requisições para a API, a template e a biblioteca EJS.</p>
+  <% } %>
+</aside>
