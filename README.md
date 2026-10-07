@@ -1,5 +1,9 @@
 # ADS-WEB2
 
+### Encontro 10 — Contrato da API
+
+- [Starter — API com 27 tarefas para os exercícios](encontro-10/starter/README.md)
+
 ### Encontro 9 — Renderização de views
 
 - [Mesma template EJS no cliente e no servidor, com comparação sem template](encontro-09/renderizacao-compartilhada/README.md)

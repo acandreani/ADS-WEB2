@@ -1,0 +1,13 @@
+{
+  "name": "encontro10-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/servidor.js",
+    "dev": "node --watch src/servidor.js",
+    "test": "node --test"
+  },
+  "dependencies": { "express": "^5.1.0" }
+}
