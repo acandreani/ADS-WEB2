@@ -1,5 +1,9 @@
 # ADS-WEB2
 
+### Encontro 11 — Consumo de serviços externos
+
+- [Starter — Catálogo e simulador de categorias](encontro-11/starter/README.md)
+
 ### Encontro 10 — Contrato da API
 
 - [Starter — API com 27 tarefas para os exercícios](encontro-10/starter/README.md)
