@@ -1,0 +1,18 @@
+{
+  "name": "encontro12-sql",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "db:criar": "node scripts/criar-banco.js",
+    "pratica": "node exemplos/pratica-guiada.js",
+    "ex1": "node solucoes/exercicio-01/index.js",
+    "ex2": "node solucoes/exercicio-02/index.js",
+    "ex3": "node solucoes/exercicio-03/index.js",
+    "ex4": "node solucoes/exercicio-04/index.js",
+    "ex5": "node solucoes/exercicio-05/index.js",
+    "ex6": "node solucoes/exercicio-06/index.js",
+    "test": "node --test"
+  }
+}

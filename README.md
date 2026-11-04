@@ -1,5 +1,11 @@
 # ADS-WEB2
 
+### Encontro 12 — SQL e SQLite
+
+- [Projeto independente, prática guiada e instruções](encontro-12/README.md)
+- [Resoluções dos seis exercícios](encontro-12/solucoes/README.md)
+- [Área de prática do aluno](encontro-12/aluno/exercicios.sql)
+
 ### Encontro 11 — Consumo de serviços externos
 
 - [Starter — Catálogo e simulador de categorias](encontro-11/starter/README.md)

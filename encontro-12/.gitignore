@@ -1,0 +1,5 @@
+encontro12-sql/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
