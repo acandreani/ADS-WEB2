@@ -1,0 +1,2 @@
+ALTER TABLE tarefas ADD COLUMN versao INTEGER NOT NULL DEFAULT 1
+CHECK(versao >= 1);

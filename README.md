@@ -2,6 +2,8 @@
 
 ### Encontro 13 — Persistência e migrações
 
+- [Lista 2 — exercícios 4, 5 e 6: migrações, persistência e atualização otimista](encontro-13/lista-02/README.md)
+
 - [Lista 1 — resolução dos três exercícios, com código e testes](encontro-13/lista-01/README.md)
 
 - [A fronteira permite trocar o armazenamento — memória e Repository SQLite](encontro-13/repositorios-intercambiaveis/README.md)
