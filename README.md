@@ -1,5 +1,9 @@
 # ADS-WEB2
 
+### Encontro 13 — Persistência e migrações
+
+- [A fronteira permite trocar o armazenamento — memória e Repository SQLite](encontro-13/repositorios-intercambiaveis/README.md)
+
 ### Encontro 12 — SQL e SQLite
 
 - [Projeto independente, prática guiada e instruções](encontro-12/README.md)

@@ -1,0 +1,14 @@
+{
+  "name": "web2-encontro13-repositorios",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "demo:memoria": "node src/main.js memoria",
+    "demo:sqlite": "node src/main.js sqlite",
+    "listar:sqlite": "node src/main.js sqlite listar",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": { "better-sqlite3": "13.0.3" }
+}
